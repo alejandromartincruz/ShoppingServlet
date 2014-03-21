@@ -1,8 +1,14 @@
 # ejemplo Patron MVC  Understanding JavaServer Pages Model 2
 
+
+Primero hay que iniciar con mysql, la base de datos que hay en la carpeta sql.
 Para iniciar el programa se ha de ejecutar sobre servidor, y luego poner la dirección siguiente:
 
 http://localhost:8080/ShoppingServlet/EShop.jsp 
+
+
+
+
 
 
 
