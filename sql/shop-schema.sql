@@ -1,17 +1,24 @@
-drop database if exists shopdb;
-create database shopdb;
+DROP DATABASE IF EXISTS DiscoStu;
+CREATE DATABASE DiscoStu;
+USE DiscoStu;
+CREATE TABLE CDs (
+  Autor VARCHAR(255) NOT NULL,
+  Disco VARCHAR(255) NOT NULL,
+  Pais VARCHAR(255) NOT NULL,
+  Precio FLOAT NOT NULL
+);
 
-use shopdb;
+INSERT INTO CDs(Autor,Disco,Pais,Precio) VALUES('Juan Antonio Canta','Las aventuras de Juan Antonio Canta', 'España' ,4.95);
+INSERT INTO CDs(Autor,Disco,Pais,Precio) VALUES('El Chivi','Me llaman radical','España',4.95);
+INSERT INTO CDs(Autor,Disco,Pais,Precio) VALUES('Flower Power','Hippyjanders','USA',6.95);
+INSERT INTO CDs(Autor,Disco,Pais,Precio) VALUES('Tenacious D','The Pick of Destiny','USA',9.95);
+INSERT INTO CDs(Autor,Disco,Pais,Precio) VALUES('Lucas Grijander','El trastofono','España',4.95);
+INSERT INTO CDs(Autor,Disco,Pais,Precio) VALUES('Darth Vader','Fathers Day','DeathStar',20.95);
 
-create table CD (
 
-	albumid 			int(11) NOT NULL AUTO_INCREMENT,
-	album				varchar(30) NOT NULL,
-  	artist				varchar(30) NOT NULL,
-  	country				varchar(20) NOT NULL,
-  	price				varchar(20) NOT NULL,
-  	quantity			varchar(20) NOT NULL,
-  	
-  	PRIMARY KEY (albumid)
-
+CREATE TABLE Registro (
+  id INTEGER NOT NULL AUTO_INCREMENT,
+  Cantidad INTEGER NOT NULL,
+  Total FLOAT NOT NULL,
+  Primary Key (id)
 );

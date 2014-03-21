@@ -38,7 +38,7 @@ import shopping.CD;
  * Servlet implementation class ShoppingServlet
  */
 public class ShoppingServlet extends HttpServlet {
-	public void init(ServletConfig conf) throws ServletException  {
+	  public void init(ServletConfig conf) throws ServletException  {
 	    super.init(conf);
 	  }
 	  public void doPost (HttpServletRequest req, HttpServletResponse res)
@@ -77,7 +77,7 @@ public class ShoppingServlet extends HttpServlet {
 	        }
 	      }
 	      session.putValue("shopping.shoppingcart", buylist);
-	      String url="/EShop.jsp";
+	      String url="/ShoppingsServlet/EShop.jsp";
 	      ServletContext sc = getServletContext();
 	      RequestDispatcher rd = sc.getRequestDispatcher(url);
 	      rd.forward(req, res);
@@ -94,7 +94,7 @@ public class ShoppingServlet extends HttpServlet {
 	      int n = amount.indexOf('.');
 	      amount = amount.substring(0,n+3);
 	      req.setAttribute("amount",amount);
-	      String url="/Checkout.jsp";
+	      String url="/ShoppingsServlet/Checkout.jsp";
 	      ServletContext sc = getServletContext();
 	      RequestDispatcher rd = sc.getRequestDispatcher(url);
 	      rd.forward(req,res);

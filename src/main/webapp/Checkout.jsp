@@ -1,11 +1,11 @@
-<%@ page session="true" import="java.util.*, shopping.CD" %>
+<%@ page session="true" import="java.util.*, shopping.CD, edu.upc.eetac.dsa.amartin.BeanSQL.BeanSQL" %>
 <html>
 <head>
-<title>Music Without Borders Checkout</title>
+<title>CDs poplen, música a tutiplen</title>
 </head>
-<body bgcolor="#33CCFF">
+<body bgcolor="#00BFFF">
  <font face="Times New Roman,Times" size=+3>
-  Music Without Borders Checkout
+  <b>Disco's Stu - Tus discos Stu-Pendos</b>
  </font>
  <hr><p>
  <center>
@@ -21,8 +21,10 @@
  <%
   Vector buylist = (Vector) session.getValue("shopping.shoppingcart");
   String amount = (String) request.getAttribute("amount");
+  int discostotales = 0;
   for (int i=0; i < buylist.size();i++) {
    CD anOrder = (CD) buylist.elementAt(i);
+   discostotales = discostotales + anOrder.getQuantity();
  %>
  <tr>
  <td><b><%= anOrder.getAlbum() %></b></td>
@@ -44,6 +46,10 @@
  </tr>
  </table>
  <p>
+ <%
+BeanSQL BSQL = new BeanSQL();
+BSQL.SetCds(amount,discostotales);
+%>
  <a href="/ShoppingServlet/EShop.jsp">Shop some more!</a>
  </center>
 </body>

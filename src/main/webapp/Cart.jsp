@@ -1,4 +1,5 @@
 <%@ page session="true" import="java.util.*, shopping.CD" %>
+
 <%
  Vector buylist = (Vector) session.getValue("shopping.shoppingcart");
  if (buylist != null && (buylist.size() > 0)) {
@@ -25,7 +26,7 @@
   <td><b><%= anOrder.getQuantity() %></b></td>
   <td>
    <form name="deleteForm"
-    action="/ShoppingServlet/ShoppingServlet"
+    action="/ShoppingServlet"
     method="POST">
    <input type="submit" value="Delete">
    <input type="hidden" name= "delindex" value='<%= index %>'>
@@ -37,7 +38,7 @@
   </table>
   <p>
   <form name="checkoutForm"
-    action="/ShoppingServlet/ShoppingServlet"
+    action="/ShoppingServlet"
     method="POST">
     <input type="hidden" name="action" value="CHECKOUT">
     <input type="submit" name="Checkout" value="Checkout">
